@@ -4,15 +4,21 @@ namespace App\Actions;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use App\Models\User;
+use App\Models\User\Profile;
 
 class GetProfile
 {
     use AsAction;
 
-    public function handle(User $user, $code)
+    public function handle(User $user, Profile $profile, $code)
     {
-        $user = $user->where('code', $code)->firstOrFail();
-        $profile = $user->profile()->with(['links'])->first();
+        $user = $user->where('code', $code)->first();
+
+        if(!$user) 
+            $profile = $profile->where('url', $code)->firstOrFail();
+        else 
+            $profile = $user->profile()->with(['links'])->firstOrFail();
+
         return $profile;
        
     }
