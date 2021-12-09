@@ -26,6 +26,10 @@ class Profile extends Model
         'phone_2',
     ];
 
+    protected $appends = [
+        'user_name'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -34,5 +38,10 @@ class Profile extends Model
     public function links()
     {
         return $this->hasMany(Link::class);
+    }
+
+    public function getUserNameAttribute()
+    {
+        return $this->user->name;
     }
 }

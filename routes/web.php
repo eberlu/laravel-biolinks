@@ -24,6 +24,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dash', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+
+Route::namespace('App\Actions')
+->group(function(){
+    Route::get('/{code?}', GetProfile::class)->name('profile');
+});

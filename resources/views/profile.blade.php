@@ -1,0 +1,1 @@
+Olá {{ $profile->nickname ?? $profile->user_name }} aqui nesta view estão as informações de seu perfil.
