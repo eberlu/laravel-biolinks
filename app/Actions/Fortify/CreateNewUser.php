@@ -37,7 +37,7 @@ class CreateNewUser implements CreatesNewUsers
                 'code' => substr(Str::uuid(), 0, 8)
             ]);
 
-            $newUser->profile()->create(["user_id" => $newUser->id]);
+            $newUser->profile()->create(["user_id" => $newUser->id, "nickname" => $newUser->name]);
 
 
         } catch (\Throwable $th) {
