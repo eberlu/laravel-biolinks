@@ -1,12 +1,13 @@
 <template>
     <div>
-        <div class="collapse rounded bg-white shadow-md">
+        <div class="collapse rounded bg-white shadow-md" :class="{ collapsed }">
             <div class="collapse-head border-b border-slate-50 py-4 px-6 px-md-8 py-md-6">
                 <button type="button" class="collapse-button" @click.prevent="collapseToggle()">
                     <slot name="button"></slot>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
                 </button>
             </div>
-            <div class="collapse-content" :class="{ collapsed }">
+            <div class="collapse-content">
                 <div class="px-6 py-4 px-md-8 py-md-6">
                     <slot name="content"></slot>
                 </div>
@@ -43,6 +44,13 @@ export default {
     width: 100%;
     height: 100%;
     text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapse-button i {
+    transition: all .5s ease;
 }
 
 .collapse-content {
@@ -50,8 +58,11 @@ export default {
     transition: all .5s ease;
 }
 
-.collapse-content.collapsed {
+.collapse.collapsed .collapse-content {
     max-height: 999px;
+}
+.collapse.collapsed .collapse-button i {
+    transform: rotate(90deg);
 }
 
 </style>
