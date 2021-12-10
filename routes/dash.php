@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 Route::middleware(['auth:sanctum', 'verified'])
 ->prefix('/dash')
-->namespace('App\Http\Controllers\Dash')
+->namespace('App\Actions\Dash')
 ->group(function() {
 
     Route::get('/', function () {
@@ -14,14 +14,19 @@ Route::middleware(['auth:sanctum', 'verified'])
 
     Route::prefix('/profile')
     ->name('profile.')
+    ->namespace('Profile')
     ->group(function() {
-        Route::get('/', 'ProfileController@edit')->name('edit');
-        Route::put('/', 'ProfileController@update')->name('update');
+
+        Route::get('/', GetProfile::class)->name('edit');
+
     });
 
     Route::prefix('/links')
     ->name('links.')
+    ->namespace('Profile\Links')
     ->group(function() {
-        Route::resource('/', 'LinksController')->except('show');
+        Route::get('/', IndexLinks::class)->name('index');
+        Route::post('/', StoreLink::class)->name('store');
     });
+
 });

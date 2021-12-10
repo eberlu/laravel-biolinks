@@ -27,5 +27,5 @@ Route::get('/', function () {
 
 Route::namespace('App\Actions')
 ->group(function(){
-    Route::get('/{code?}', GetProfile::class)->name('profile');
+    Route::get('/{code?}', GetProfileByURL::class)->name('profile');
 });
