@@ -5,3 +5,9 @@
 .theme-default {
     --color-primary: #4e69e4;
 }
+
+@media(min-width: 640px) {
+    table .td-action {
+        max-width: 50px;
+    }
+}

@@ -9,13 +9,14 @@ class IndexLinks
 {
     use AsAction;
 
-    public function handle()
+    public function handle($take = 15)
     {
         return \Auth::user()
             ->profile()
             ->with('links')
             ->firstOrFail()
-            ->links;
+            ->links()
+            ->paginate($take);
     }
 
     public function htmlResponse($links)
