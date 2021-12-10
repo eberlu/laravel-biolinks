@@ -39,6 +39,12 @@ export default {
     position: relative;
 }
 
+.collapse-button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
 .collapse-content {
     max-height: 0;
     transition: all 3s linear;
