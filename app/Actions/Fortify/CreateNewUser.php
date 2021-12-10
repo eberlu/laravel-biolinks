@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
-use Str;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -39,7 +38,6 @@ class CreateNewUser implements CreatesNewUsers
             $newUser->profile()->create([
                 "user_id" => $newUser->id, 
                 "nickname" => $newUser->name,
-                'code' => substr(Str::uuid(), 0, 8)
             ]);
 
 

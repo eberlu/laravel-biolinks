@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\User\Profile\Link;
+use Str;
 
 class Profile extends Model
 {
@@ -44,5 +45,13 @@ class Profile extends Model
     public function getUserNameAttribute()
     {
         return $this->user->name;
+    }
+
+    protected static function boot() {
+        parent::boot();
+
+        static::creating(function($model) {
+            $model->code = substr(Str::uuid(), 0, 8);
+        });
     }
 }
