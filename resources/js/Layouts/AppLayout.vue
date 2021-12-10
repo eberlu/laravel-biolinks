@@ -25,6 +25,9 @@
                                 <jet-nav-link :href="route('profile.edit')" :active="route().current('profile.edit')">
                                     Meu Perfil
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('links.index')" :active="route().current('links.index')">
+                                    Links
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -150,6 +153,9 @@
                         </jet-responsive-nav-link>
                         <jet-nav-link :href="route('profile.edit')" :active="route().current('profile.edit')">
                             Meu Perfil
+                        </jet-nav-link>
+                        <jet-nav-link :href="route('links.index')" :active="route().current('links.index')">
+                            Links
                         </jet-nav-link>
                     </div>
 

@@ -18,4 +18,10 @@ Route::middleware(['auth:sanctum', 'verified'])
         Route::get('/', 'ProfileController@edit')->name('edit');
         Route::put('/', 'ProfileController@update')->name('update');
     });
+
+    Route::prefix('/links')
+    ->name('links.')
+    ->group(function() {
+        Route::resource('/', 'LinksController')->except('show');
+    });
 });

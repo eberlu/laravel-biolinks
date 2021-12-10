@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="Profile">
+    <app-layout title="Conta">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Profile
+                Minha Conta
             </h2>
         </template>
 
@@ -20,11 +20,11 @@
                     <jet-section-border />
                 </div>
 
-                <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
+                <!-- <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
                     <two-factor-authentication-form class="mt-10 sm:mt-0" />
 
                     <jet-section-border />
-                </div>
+                </div> -->
 
                 <logout-other-browser-sessions-form :sessions="sessions" class="mt-10 sm:mt-0" />
 
@@ -44,7 +44,7 @@
     import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue'
     import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
     import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue'
-    import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
+    // import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
     import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
     import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue'
 
@@ -56,7 +56,7 @@
             DeleteUserForm,
             JetSectionBorder,
             LogoutOtherBrowserSessionsForm,
-            TwoFactorAuthenticationForm,
+            // TwoFactorAuthenticationForm,
             UpdatePasswordForm,
             UpdateProfileInformationForm,
         },
