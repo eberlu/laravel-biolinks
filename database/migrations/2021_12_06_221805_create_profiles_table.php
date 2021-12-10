@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('code', 12)->unique();
             $table->string('url')->unique()->nullable();
             $table->string('nickname')->nullable();
             $table->string('description')->nullable();

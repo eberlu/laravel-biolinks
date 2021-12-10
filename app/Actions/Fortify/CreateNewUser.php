@@ -34,10 +34,13 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
-                'code' => substr(Str::uuid(), 0, 8)
             ]);
 
-            $newUser->profile()->create(["user_id" => $newUser->id, "nickname" => $newUser->name]);
+            $newUser->profile()->create([
+                "user_id" => $newUser->id, 
+                "nickname" => $newUser->name,
+                'code' => substr(Str::uuid(), 0, 8)
+            ]);
 
 
         } catch (\Throwable $th) {
