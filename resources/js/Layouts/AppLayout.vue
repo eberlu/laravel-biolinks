@@ -112,7 +112,7 @@
                                             Gerenciar conta
                                         </div>
 
-                                        <jet-dropdown-link :href="route('profile.show')">
+                                        <jet-dropdown-link :href="route('account')">
                                             Minha conta
                                         </jet-dropdown-link>
 
@@ -173,7 +173,7 @@
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
+                            <jet-responsive-nav-link :href="route('account')" :active="route().current('account')">
                                 Minha conta
                             </jet-responsive-nav-link>
 
