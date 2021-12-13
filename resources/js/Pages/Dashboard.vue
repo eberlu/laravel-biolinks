@@ -91,11 +91,6 @@
     export default defineComponent({
         components: {
             AppLayout, ContentPage
-        },
-        methods: {
-            cardClick(route) {
-                console.log(route)
-            }
         }
     })
 </script>
