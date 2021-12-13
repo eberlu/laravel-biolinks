@@ -20113,6 +20113,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Collapse',
+  props: {
+    isCollapsed: {
+      type: Boolean,
+      "default": false
+    }
+  },
   data: function data() {
     return {
       collapsed: false
@@ -20123,6 +20129,9 @@ __webpack_require__.r(__webpack_exports__);
       this.collapsed = !this.collapsed;
       this.$root.$emit('toggle::collapse');
     }
+  },
+  mounted: function mounted() {
+    this.collapsed = this.isCollapsed;
   }
 });
 

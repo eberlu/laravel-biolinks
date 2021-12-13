@@ -19,6 +19,12 @@
 <script>
 export default {
     name: 'Collapse',
+    props: {
+        isCollapsed: {
+            type: Boolean,
+            default: false
+        }
+    },
     data() {
         return {
             collapsed: false
@@ -29,6 +35,9 @@ export default {
             this.collapsed = !this.collapsed
             this.$root.$emit('toggle::collapse')
         }
+    },
+    mounted() {
+        this.collapsed = this.isCollapsed
     }
 }
 </script>
