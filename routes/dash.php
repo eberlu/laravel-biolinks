@@ -20,6 +20,7 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->group(function() {
     
             Route::get('/', GetProfile::class)->name('edit');
+            Route::put('/', UpdateProfile::class)->name('update');
     
         });
     

@@ -4,19 +4,19 @@ namespace App\Actions\Dash\Profile;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use Inertia\Inertia;
-use App\Models\User;
 
 class GetProfile
 {
     use AsAction;
 
-    public function handle(User $user)
+    public function handle()
     {
-        return $user->profile;
+        return \Auth::user()->profile;
     }
 
     public function htmlResponse($profile)
     {
-        return Inertia::render('Profile/Edit', compact('profile'));
+        $user = $profile->user;
+        return Inertia::render('Profile/Edit', compact('profile', 'user'));
     }
 }
