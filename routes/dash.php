@@ -27,6 +27,9 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->name('links.')
         ->namespace('Profile\Links')
         ->group(function() {
+            Route::get('/create', function(){
+                return Inertia::render('Links/Create');
+            })->name('create');
             Route::get('/', IndexLinks::class)->name('index');
             Route::post('/', StoreLink::class)->name('store');
             Route::delete('/{id}', DestroyLink::class)->name('destroy');

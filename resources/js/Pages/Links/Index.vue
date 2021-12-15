@@ -9,6 +9,12 @@
         <div class="py-12">
             <content-page>
 
+                <div class="flex items-center justify-start w-full mb-5">
+                    <Button tag="a" :href="route('links.create')" variant="primary">
+                        Criar Link
+                    </Button>
+                </div>
+
                 <table-default :fields="fields" :items="links.data">
 
                     <template v-slot:icon="slotData">
@@ -66,6 +72,7 @@ import TableDefault from '@/Components/TableDefault.vue'
 import JetDialogModal from '@/Jetstream/DialogModal.vue'
 import JetDangerButton from '@/Jetstream/DangerButton.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+import Button from '@/Components/Button.vue'
 
 export default {
     components: {
@@ -75,7 +82,8 @@ export default {
         TableDefault,
         JetDialogModal,
         JetDangerButton,
-        JetSecondaryButton
+        JetSecondaryButton,
+        Button
     },
     props: ['links'],
     data(){

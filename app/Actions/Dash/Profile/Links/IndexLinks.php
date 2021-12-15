@@ -16,6 +16,7 @@ class IndexLinks
             ->with('links')
             ->firstOrFail()
             ->links()
+            ->orderBy('created_at', 'desc')
             ->paginate($take);
     }
 
