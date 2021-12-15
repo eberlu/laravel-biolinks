@@ -20,7 +20,7 @@
                             <button type="button" :data-id="slotData.row.id" class="w-9 h-9 rounded-full border border-gray-800 text-gray-800 text-xs flex items-center justify-center hover:bg-gray-700 hover:text-white mr-2">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" @click.prevent="deleteLink(route('links.destroy', slotData.row.id))" class="w-9 h-9 rounded-full border border-red-500 text-red-500 text-xs flex items-center justify-center hover:bg-red-500 hover:text-white">
+                            <button type="button" @click.prevent="openModalDelete(slotData.row.id)" class="w-9 h-9 rounded-full border border-red-500 text-red-500 text-xs flex items-center justify-center hover:bg-red-500 hover:text-white">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
@@ -31,6 +31,26 @@
                 <div class="mt-5">
                     <pagination :links="links.links" />
                 </div>
+
+                <jet-dialog-modal :show="deleteModalOpen" @close="closeModalDelete">
+                    <template #title>
+                        Deletar Link
+                    </template>
+
+                    <template #content>
+                        Esta ação é irreversível e permanente, cuidado.
+                    </template>
+
+                    <template #footer>
+                        <jet-secondary-button @click="closeModalDelete">
+                            Cancelar
+                        </jet-secondary-button>
+
+                        <jet-danger-button class="ml-2" @click="deleteLink(this.deleteCurrentId)">
+                            Deletar Link
+                        </jet-danger-button>
+                    </template>
+                </jet-dialog-modal>
 
             </content-page>
         </div>
@@ -43,17 +63,25 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import ContentPage from '@/Components/ContentPage.vue'
 import Pagination from '@/Components/Pagination.vue'
 import TableDefault from '@/Components/TableDefault.vue'
+import JetDialogModal from '@/Jetstream/DialogModal.vue'
+import JetDangerButton from '@/Jetstream/DangerButton.vue'
+import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 
 export default {
     components: {
         AppLayout, 
         ContentPage, 
         Pagination, 
-        TableDefault, 
+        TableDefault,
+        JetDialogModal,
+        JetDangerButton,
+        JetSecondaryButton
     },
     props: ['links'],
     data(){
         return {
+            deleteModalOpen: false,
+            deleteCurrentId: null,
             fields: [ 
                 { name: 'icon',     display: '#' },
                 { name: 'title',    display: 'Título' },
@@ -63,9 +91,23 @@ export default {
         }
     },
     methods: {
-        deleteLink(url) {
-            this.$inertia.delete(url).then(res => {
-                console.log(res)
+        openModalDelete(id) {
+            this.deleteModalOpen = true
+            this.deleteCurrentId = id
+        },
+
+        closeModalDelete() {
+            this.deleteModalOpen = false
+            this.deleteCurrentId = null
+        },
+
+        deleteLink(id) {
+            let url = route('links.destroy', id)
+            this.$inertia.delete(url, {
+                onFinish: () => {
+                    this.deleteModalOpen = false
+                    this.deleteCurrentId = null
+                }
             })
         }
     }
