@@ -19,7 +19,7 @@ class AccountController extends Controller
      */
     public function show(Request $request)
     {
-        return Jetstream::inertia()->render($request, 'Account', [
+        return Jetstream::inertia()->render($request, 'User/Account', [
             'sessions' => $this->sessions($request)->all(),
         ]);
     }

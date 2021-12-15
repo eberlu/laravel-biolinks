@@ -6,7 +6,6 @@ use Inertia\Inertia;
 Route::middleware(['auth:sanctum', 'verified'])
 ->prefix('/dash')
 ->group(function() {
-
     Route::namespace('App\Actions\Dash')
     ->group(function() {
     
@@ -40,4 +39,8 @@ Route::middleware(['auth:sanctum', 'verified'])
         Route::get('/account', 'AccountController@show')->name('account');
     });
 });
+
+Route::get('user/profile', function(){
+    return redirect()->route('account');
+})->name('profile.show');
 
