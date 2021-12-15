@@ -28,9 +28,10 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->name('links.')
         ->namespace('Profile\Links')
         ->group(function() {
-            Route::get('/{take?}', IndexLinks::class)->name('index');
+            Route::get('/', IndexLinks::class)->name('index');
             Route::post('/', StoreLink::class)->name('store');
             Route::delete('/{id}', DestroyLink::class)->name('destroy');
+            Route::get('/{id}', EditLink::class)->name('edit');
         });
     });
 
