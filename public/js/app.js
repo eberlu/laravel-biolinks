@@ -21778,6 +21778,13 @@ __webpack_require__.r(__webpack_exports__);
         "class": 'td-action'
       }]
     };
+  },
+  methods: {
+    deleteLink: function deleteLink(url) {
+      this.$inertia["delete"](url).then(function (res) {
+        console.log(res);
+      });
+    }
   }
 });
 
@@ -26103,7 +26110,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_6 = [_hoisted_5];
-var _hoisted_7 = ["data-id"];
+var _hoisted_7 = ["onClick"];
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-trash"
@@ -26148,12 +26155,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
                 "data-id": slotData.row.id,
-                "class": "w-9 h-9 rounded-full border border-indigo-500 text-indigo-500 text-xs flex items-center justify-center hover:bg-indigo-500 hover:text-white mr-2"
+                "class": "w-9 h-9 rounded-full border border-gray-800 text-gray-800 text-xs flex items-center justify-center hover:bg-gray-700 hover:text-white mr-2"
               }, _hoisted_6, 8
               /* PROPS */
               , _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
                 type: "button",
-                "data-id": slotData.row.id,
+                onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+                  return $options.deleteLink(_ctx.route('links.destroy', slotData.row.id));
+                }, ["prevent"]),
                 "class": "w-9 h-9 rounded-full border border-red-500 text-red-500 text-xs flex items-center justify-center hover:bg-red-500 hover:text-white"
               }, _hoisted_9, 8
               /* PROPS */

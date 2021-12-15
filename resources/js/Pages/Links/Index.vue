@@ -17,10 +17,10 @@
 
                     <template v-slot:id="slotData">
                         <div class="flex align-items-center">
-                            <button type="button" :data-id="slotData.row.id" class="w-9 h-9 rounded-full border border-indigo-500 text-indigo-500 text-xs flex items-center justify-center hover:bg-indigo-500 hover:text-white mr-2">
+                            <button type="button" :data-id="slotData.row.id" class="w-9 h-9 rounded-full border border-gray-800 text-gray-800 text-xs flex items-center justify-center hover:bg-gray-700 hover:text-white mr-2">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" :data-id="slotData.row.id" class="w-9 h-9 rounded-full border border-red-500 text-red-500 text-xs flex items-center justify-center hover:bg-red-500 hover:text-white">
+                            <button type="button" @click.prevent="deleteLink(route('links.destroy', slotData.row.id))" class="w-9 h-9 rounded-full border border-red-500 text-red-500 text-xs flex items-center justify-center hover:bg-red-500 hover:text-white">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
@@ -60,6 +60,13 @@ export default {
                 { name: 'url',      display: 'URL' },
                 { name: 'id',       display: '#',   class: 'td-action'}
             ],
+        }
+    },
+    methods: {
+        deleteLink(url) {
+            this.$inertia.delete(url).then(res => {
+                console.log(res)
+            })
         }
     }
 }

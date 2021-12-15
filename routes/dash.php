@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->group(function() {
             Route::get('/{take?}', IndexLinks::class)->name('index');
             Route::post('/', StoreLink::class)->name('store');
+            Route::delete('/{id}', DestroyLink::class)->name('destroy');
         });
     });
 
