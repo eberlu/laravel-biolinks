@@ -11,6 +11,9 @@
                 <div class="px-6 py-4 px-md-8 py-md-6">
                     <slot name="content"></slot>
                 </div>
+                <div class="flex items-center px-4 py-3 bg-gray-50 sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md" v-if="hasFooter">
+                    <slot name="footer"></slot>
+                </div>
             </div>
         </div>
     </div>
@@ -38,6 +41,11 @@ export default {
     },
     mounted() {
         this.collapsed = this.isCollapsed
+    },
+    computed: {
+        hasFooter() {
+            return !!this.$slots.footer
+        }
     }
 }
 </script>
