@@ -11,7 +11,7 @@ class GetProfileByURL
 
     public function handle(Profile $profile, $code)
     {
-        return $profile->where('code', $code)->orWhere('url', $code)->firstOrFail();
+        return $profile->where('code', $code)->orWhere('url', $code)->with('links')->firstOrFail();
     }
 
     public function htmlResponse($profile)

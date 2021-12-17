@@ -29,7 +29,8 @@ class Profile extends Model
     ];
 
     protected $appends = [
-        'user_name'
+        'user_name',
+        'avatar'
     ];
 
     public function user()
@@ -45,6 +46,11 @@ class Profile extends Model
     public function getUserNameAttribute()
     {
         return $this->user->name;
+    }
+
+    public function getAvatarAttribute()
+    {
+        return $this->user->profile_photo_url;
     }
 
     protected static function boot() {

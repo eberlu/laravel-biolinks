@@ -12,10 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js').vue()
-    .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('tailwindcss'),
-    ])
+    .postCss('resources/css/app.css', 'public/css')
+    .postCss('resources/css/profile.css', 'public/css')
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
@@ -25,4 +23,11 @@ if (mix.inProduction()) {
 mix.browserSync({
     proxy: "127.0.0.1:8000", 
     open: false
+})
+
+mix.options({
+    postCss: [
+        require('postcss-import'),
+        require('tailwindcss'),
+    ]
 })
