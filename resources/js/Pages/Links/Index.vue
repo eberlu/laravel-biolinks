@@ -44,7 +44,7 @@
                     </template>
 
                     <template #content>
-                        Esta ação é irreversível e permanente, cuidado.
+                        Esta ação é irreversível, cuidado.
                     </template>
 
                     <template #footer>

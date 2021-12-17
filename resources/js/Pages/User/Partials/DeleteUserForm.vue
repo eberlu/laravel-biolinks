@@ -26,7 +26,7 @@
                 </template>
 
                 <template #content>
-                    Repetindo: esta ação é irreversível e permanente, cuidado.
+                    Repetindo: esta ação é irreversível, cuidado.
 
                     <div class="mt-4">
                         <jet-input type="password" class="mt-1 block w-3/4" placeholder="Senha"
