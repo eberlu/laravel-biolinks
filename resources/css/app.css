@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .theme-default {
-    --color-primary: #4e69e4;
+    --color-primary: #1f2937;
 }
 
 @media(min-width: 640px) {

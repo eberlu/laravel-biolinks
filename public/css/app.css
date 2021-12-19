@@ -1150,6 +1150,9 @@ select {
 .m-5 {
 	margin: 1.25rem;
 }
+.m-3 {
+	margin: 0.75rem;
+}
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1247,6 +1250,9 @@ select {
 }
 .mb-5 {
 	margin-bottom: 1.25rem;
+}
+.mb-2 {
+	margin-bottom: 0.5rem;
 }
 .block {
 	display: block;
@@ -1424,6 +1430,9 @@ select {
 }
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col {
 	flex-direction: column;
@@ -1764,6 +1773,9 @@ select {
 .pt-0 {
 	padding-top: 0px;
 }
+.pb-2 {
+	padding-bottom: 0.5rem;
+}
 .text-left {
 	text-align: left;
 }
@@ -1802,6 +1814,10 @@ select {
 .text-xl {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
+}
+.text-4xl {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
 }
 .font-medium {
 	font-weight: 500;
@@ -1999,7 +2015,7 @@ select {
 	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 .theme-default {
-    --color-primary: #4e69e4;
+    --color-primary: #1f2937;
 }
 @media(min-width: 640px) {
     table .td-action {
@@ -2061,6 +2077,10 @@ select {
 .hover\:text-white:hover {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.hover\:shadow-none:hover {
+	--tw-shadow: 0 0 #0000;
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .focus\:z-10:focus {
 	z-index: 10;
@@ -2314,6 +2334,10 @@ select {
 		transform: var(--tw-transform);
 	}
 
+	.sm\:grid-cols-5 {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
+
 	.sm\:items-start {
 		align-items: flex-start;
 	}
@@ -2428,6 +2452,10 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
+	.md\:grid-cols-8 {
+		grid-template-columns: repeat(8, minmax(0, 1fr));
+	}
+
 	.md\:gap-6 {
 		gap: 1.5rem;
 	}
@@ -2448,6 +2476,10 @@ select {
 
 	.lg\:col-span-2 {
 		grid-column: span 2 / span 2;
+	}
+
+	.lg\:grid-cols-12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
 	}
 
 	.lg\:grid-cols-2 {

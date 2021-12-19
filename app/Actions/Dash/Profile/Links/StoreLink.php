@@ -17,7 +17,8 @@ class StoreLink
         return Link::create([
             "title" => $request->get('title'),
             "url" => $request->get('url'),
-            "profile_id" => $profile_id
+            "profile_id" => $profile_id,
+            "icon" => $request->get('icon')
         ]);
     }
 

@@ -26,10 +26,18 @@
                                 <jet-input id="url" type="text" class="mt-1 block w-full" v-model="form.url" />
                                 <jet-input-error :message="form.errors.url" class="mt-2" />
                             </div>
+
+                            <!-- icon -->
+                            <div class="col-span-6">
+                                <jet-label for="icon" value="Selecione o ícone (não é obrigatório)" class="mb-3"/>
+                                <jet-input id="icon" type="hidden" v-model="form.icon" />
+                                <IconSelector @selected="iconSelected" :selected="form.icon"/>
+                            </div>
+
                         </template>
 
                         <template #actions>
-                            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
+                            <jet-action-message :on="form.recentlySuccessful" class="mb-5">
                                 Link criado com sucesso
                             </jet-action-message>
 
@@ -55,6 +63,7 @@ import JetInputError from '@/Jetstream/InputError.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+import IconSelector from '@/Components/IconSelector.vue'
 
 export default {
     components: {
@@ -67,13 +76,14 @@ export default {
         JetInputError,
         JetLabel,
         JetSecondaryButton,
+        IconSelector
     },
     data(){
         return {
             form: this.$inertia.form({
-                title: '',
-                url: '',
-                icon: '',
+                title: null,
+                url: null,
+                icon: null,
             })
         }
     },
@@ -83,6 +93,9 @@ export default {
                 onSuccess: () => this.form.reset()
             })
         },
+        iconSelected(icon) {
+            this.form.icon = icon
+        }
     }
 }
 </script>
