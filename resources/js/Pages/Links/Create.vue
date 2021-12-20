@@ -9,7 +9,7 @@
 
             <div class="py-12">
                 <content-page>
-                    <FormLinks :form="form" @changeIcon="changeIcon" @save="save"/>
+                    <FormLinks :form="form" @changeIcon="changeIcon" @save="save" actionMessage="Link criado com sucesso"/>
                 </content-page>
             </div>
 

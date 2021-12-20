@@ -21849,6 +21849,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
+        _method: 'PUT',
         title: this.$page.props.link.title,
         url: this.$page.props.link.url,
         icon: this.$page.props.link.icon
@@ -21990,7 +21991,7 @@ __webpack_require__.r(__webpack_exports__);
     JetSecondaryButton: _Jetstream_SecondaryButton_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     IconSelector: _Components_IconSelector_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
-  props: ['form'],
+  props: ['form', 'actionMessage'],
   methods: {
     iconSelected: function iconSelected(icon) {
       this.$emit('changeIcon', icon);
@@ -26458,7 +26459,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_FormLinks, {
             form: $data.form,
             onChangeIcon: $options.changeIcon,
-            onSave: $options.save
+            onSave: $options.save,
+            actionMessage: "Link criado com sucesso"
           }, null, 8
           /* PROPS */
           , ["form", "onChangeIcon", "onSave"])];
@@ -26754,9 +26756,7 @@ var _hoisted_3 = {
   "class": "col-span-6"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Link criado com sucesso ");
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Salvar ");
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Salvar ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-label");
@@ -26839,10 +26839,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     actions: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_action_message, {
         on: $props.form.recentlySuccessful,
-        "class": "mb-5"
+        "class": "mr-5"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_4];
+          var _$props$actionMessage;
+
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_$props$actionMessage = $props.actionMessage) !== null && _$props$actionMessage !== void 0 ? _$props$actionMessage : 'Salvo com sucesso'), 1
+          /* TEXT */
+          )];
         }),
         _: 1
         /* STABLE */
@@ -26856,7 +26860,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         disabled: $props.form.processing
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_5];
+          return [_hoisted_4];
         }),
         _: 1
         /* STABLE */

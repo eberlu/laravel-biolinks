@@ -32,6 +32,7 @@ export default {
     data(){
         return {
             form: this.$inertia.form({
+                _method: 'PUT',
                 title: this.$page.props.link.title,
                 url: this.$page.props.link.url,
                 icon: this.$page.props.link.icon,

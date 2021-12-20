@@ -28,8 +28,8 @@
             </template>
 
             <template #actions>
-                <jet-action-message :on="form.recentlySuccessful" class="mb-5">
-                    Link criado com sucesso
+                <jet-action-message :on="form.recentlySuccessful" class="mr-5">
+                    {{ actionMessage ?? 'Salvo com sucesso' }}
                 </jet-action-message>
 
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -62,7 +62,7 @@ export default {
         JetSecondaryButton,
         IconSelector,
     },
-    props: ['form'],
+    props: ['form', 'actionMessage'],
     methods: {
         iconSelected(icon) {
             this.$emit('changeIcon', icon)
