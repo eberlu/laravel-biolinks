@@ -12,14 +12,8 @@ class StoreLink
 
     public function handle(Request $request)
     {
-        $profile_id = \Auth::user()->profile->id;
-
-        return Link::create([
-            "title" => $request->get('title'),
-            "url" => $request->get('url'),
-            "profile_id" => $profile_id,
-            "icon" => $request->get('icon')
-        ]);
+        $profile = \Auth::user()->profile;
+        return $profile->links()->create($request->all());
     }
 
     public function htmlResponse()

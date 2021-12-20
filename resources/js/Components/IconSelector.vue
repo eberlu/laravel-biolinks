@@ -35,10 +35,10 @@ import DangerButton from '@/Jetstream/DangerButton.vue'
 export default {
     components: { DangerButton },
     emits: ['selected'],
-    props: ['selected'],
+    props: ['selected', 'startActive'],
     data() {
         return {
-            active: true,
+            active: this.$props.startActive ?? false,
             icons: icons,
         }
     },
