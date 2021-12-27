@@ -23,7 +23,7 @@
             
             @foreach ($profile->links as $link)
                 <a href="{{ $link->url }}" class="bg-white m-7 shadow-md mt-0 w-full text-left rounded-md flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank">
-                    <i class="fas fa-cube px-5 py-3 text-center h-full rounded-l-md text-2xl mr-5 -left-1 relative" style="background-color: #262626; color: #fff; border: 1px solid #262626;"></i>
+                    <i class="fas fa-cube px-5 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-5 -left-1 relative" style="background-color: #262626; color: #fff; border: 1px solid #262626;"></i>
                     {{ $link->title }}
                 </a>
             @endforeach
