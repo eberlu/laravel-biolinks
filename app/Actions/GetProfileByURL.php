@@ -11,7 +11,13 @@ class GetProfileByURL
 
     public function handle(Profile $profile, $code)
     {
-        return $profile->where('code', $code)->orWhere('url', $code)->with('links')->firstOrFail();
+        return $profile
+        ->where('code', $code)
+        ->orWhere('url', $code)
+        ->with('links', function($q) {
+            return $q->orderBy('created_at', 'desc');
+        })
+        ->firstOrFail();
     }
 
     public function htmlResponse($profile)
