@@ -28,4 +28,5 @@ Route::get('/', function () {
 Route::namespace('App\Actions')
 ->group(function(){
     Route::get('/{code?}', GetProfileByURL::class)->name('profile');
+    Route::get('/vcard/{code}', DownloadProfileCard::class)->name('profile.card.download');
 });

@@ -40,10 +40,10 @@
                 <i class="fas fa-qrcode"></i>
                 <span class="text-xs mt-2 hidden sm:flex">QR Code</span>
             </button>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" >
+            <a href="{{ route('profile.card.download', $profile->code) }}" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" >
                 <i class="fas fa-download"></i>
                 <span class="text-xs mt-2 hidden sm:flex">Download</span>
-            </button>
+            </a>
             <button type="button" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" id="btnShare">
                 <i class="fas fa-share"></i>
                 <span class="text-xs mt-2 hidden sm:flex">Compartilhar</span>
