@@ -28,6 +28,7 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-        "micromodal": "^0.4.10"
+        "micromodal": "^0.4.10",
+        "qrjs2": "^0.1.11"
     }
 }

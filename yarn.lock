@@ -5036,6 +5036,11 @@ purgecss@^4.0.3:
     postcss "^8.3.5"
     postcss-selector-parser "^6.0.6"
 
+qrjs2@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/qrjs2/-/qrjs2-0.1.11.tgz#b92073a352db54859349c69d169b38babd8e67f4"
+  integrity sha512-KjKN2SMoZkk6lVyztb5917ItDli8TP/S+1nyWnab4KvYpChDDNe3+itBPjxS++3fuZ97yC+C0CpN0cx/zA+/BQ==
+
 qs@6.2.3:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.3.tgz#1cfcb25c10a9b2b483053ff39f5dfc9233908cfe"

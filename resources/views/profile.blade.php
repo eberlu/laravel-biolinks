@@ -35,20 +35,20 @@
 
     <main class="main container mx-auto px-10 sm:max-w-md lg:max-w-screen-sm" style="color: #262626;">
 
-        <section class="actions flex items-center justify-center mb-10">
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border w-3/4 rounded-l-md" style="border-color: #fff; color: #fff">
+        <section class="actions flex items-center justify-center mb-10" style="color: #fff">
+            <button type="button" class="flex flex-col items-center justify-center action p-3 border border-gray-600 w-3/4 rounded-l-md" id="btnQR">
                 <i class="fas fa-qrcode"></i>
                 <span class="text-xs mt-2 hidden sm:flex">QR Code</span>
             </button>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border-t border-b border-r w-3/4" style="border-color: #fff; color: #fff">
+            <button type="button" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" >
                 <i class="fas fa-download"></i>
                 <span class="text-xs mt-2 hidden sm:flex">Download</span>
             </button>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border-t border-b border-r w-3/4" style="border-color: #fff; color: #fff">
+            <button type="button" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" id="btnShare">
                 <i class="fas fa-share"></i>
                 <span class="text-xs mt-2 hidden sm:flex">Compartilhar</span>
             </button>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border-t border-b border-r w-3/4 rounded-r-md" style="border-color: #fff; color: #fff">
+            <button type="button" class="flex flex-col items-center justify-center action p-3 w-3/4 border border-r border-t border-b border-gray-600 rounded-r-md">
                 <i class="fas fa-phone"></i>
                 <span class="text-xs mt-2 hidden sm:flex">Ligar</span>
             </button>
@@ -71,6 +71,14 @@
     </footer>
 
     @include('profile.share')
+    @include('profile.modalQR')
+
+    {{-- input values for QR's and others exports  --}}
+    <input type="hidden" value="{{ $profile->nickname }}" id="field-name" />
+    <input type="hidden" value="{{ $profile->description }}" id="field-desc" />
+    <input type="hidden" value="{{ $profile->email }}" id="field-email" />
+    <input type="hidden" value="{{ $profile->phone }}" id="field-phone" />
+    <input type="hidden" value="{{ route('profile', $profile->code) }}" id="field-code" />
 
     <script src="{{ asset('js/profile.js') }}"></script>
 
