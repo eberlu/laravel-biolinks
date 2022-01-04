@@ -35,29 +35,37 @@
 
     <main class="main container mx-auto px-10 sm:max-w-md lg:max-w-screen-sm" style="color: #262626;">
 
-        <section class="actions flex items-center justify-center mb-10" style="color: #fff">
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border border-gray-600 w-3/4 rounded-l-md" id="btnQR">
-                <i class="fas fa-qrcode"></i>
-                <span class="text-xs mt-2 hidden sm:flex">QR Code</span>
+        <section class="actions flex items-center justify-center mb-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" style="color: #fff">
+            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" id="btnQR">
+                <i class="text-lg fas fa-qrcode"></i>
+                <span class="text-xs mt-2 ">QR Code</span>
             </button>
-            <a href="{{ route('profile.card.download', $profile->code) }}" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" >
-                <i class="fas fa-download"></i>
-                <span class="text-xs mt-2 hidden sm:flex">Download</span>
+            <a href="{{ route('profile.card.download', $profile->code) }}" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" >
+                <i class="text-lg fas fa-download"></i>
+                <span class="text-xs mt-2 ">Download</span>
             </a>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 border-r border-t border-b border-gray-600 w-3/4" id="btnShare">
-                <i class="fas fa-share"></i>
-                <span class="text-xs mt-2 hidden sm:flex">Compartilhar</span>
+            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" id="btnShare">
+                <i class="text-lg fas fa-share"></i>
+                <span class="text-xs mt-2 ">Compartilhar</span>
             </button>
-            <button type="button" class="flex flex-col items-center justify-center action p-3 w-3/4 border border-r border-t border-b border-gray-600 rounded-r-md">
-                <i class="fas fa-phone"></i>
-                <span class="text-xs mt-2 hidden sm:flex">Ligar</span>
+            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+                <i class="text-lg fab fa-whatsapp"></i>
+                <span class="text-xs mt-2 ">Conversar</span>
+            </button>
+            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+                <i class="text-lg fas fa-envelope"></i>
+                <span class="text-xs mt-2 ">Email</span>
+            </button>
+            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+                <i class="text-lg fas fa-phone"></i>
+                <span class="text-xs mt-2 ">Ligar</span>
             </button>
         </section>
 
         <section class="links flex flex-col items-center justify-center">
             
             @foreach ($profile->links as $link)
-                <a href="{{ $link->url }}" class="m-7 shadow-lg mt-0 w-full text-left rounded-md flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank" style="background-color: #fff;">
+                <a href="{{ $link->url }}" class="m-7 shadow-lg mt-0 w-full text-left rounded-sm flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank" style="background-color: #fff;">
                     <i class="fas fa-cube px-3 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-3  relative" style="background-color: #262626; color: #fff; border: 2px solid #fff;"></i>
                     {{ $link->title }}
                 </a>
