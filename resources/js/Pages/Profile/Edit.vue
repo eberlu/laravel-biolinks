@@ -34,11 +34,7 @@
                     </template>
                 </collapse>
 
-                <collapse class="mt-5">
-                    <template #button>
-                        Redes Sociais
-                    </template>
-                </collapse>
+                <SocialMedias class="mt-5"/>
 
             </content-page>
         </div>
@@ -52,7 +48,8 @@ import ContentPage from '@/Components/ContentPage.vue'
 import Collapse from '@/Components/Collapse.vue'
 import Button from '@/Components/Button.vue'
 import Alert from '@/Components/Alert.vue'
-import Informations from './partials/informations.vue'
+import Informations from './partials/Informations'
+import SocialMedias from './partials/SocialMedias'
 
 export default {
     components: {
@@ -61,7 +58,8 @@ export default {
         Collapse, 
         Button,
         Alert,
-        Informations
+        Informations,
+        SocialMedias
     },
     props: ['profile', 'user'],
 }
