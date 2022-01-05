@@ -75,7 +75,7 @@ export default {
     },
     methods: {
         updateInformations() {
-            this.form.post(route('profile.update'), {
+            this.form.post(route('profile.infos.update'), {
                 errorBag: 'updateInformations',
                 preserveScroll: true,
             })

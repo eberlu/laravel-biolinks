@@ -19,7 +19,8 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->group(function() {
     
             Route::get('/', GetProfile::class)->name('edit');
-            Route::put('/', UpdateProfile::class)->name('update');
+            Route::put('/informations', UpdateInformations::class)->name('infos.update');
+            Route::put('/social', UpdateSocialMedias::class)->name('social.update');
     
         });
     

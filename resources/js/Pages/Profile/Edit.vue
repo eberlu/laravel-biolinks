@@ -34,7 +34,7 @@
                     </template>
                 </collapse>
 
-                <SocialMedias class="mt-5"/>
+                <SocialMedias class="mt-5" :profile="profile"/>
 
             </content-page>
         </div>

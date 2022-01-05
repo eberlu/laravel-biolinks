@@ -22113,7 +22113,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     updateInformations: function updateInformations() {
-      this.form.post(route('profile.update'), {
+      this.form.post(route('profile.infos.update'), {
         errorBag: 'updateInformations',
         preserveScroll: true
       });
@@ -22159,13 +22159,21 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        _method: 'PUT'
+        _method: 'PUT',
+        facebook: this.profile.facebook,
+        instagram: this.profile.instagram,
+        tiktok: this.profile.tiktok,
+        twitter: this.profile.twitter,
+        linkedin: this.profile.linkedin,
+        youtube: this.profile.youtube,
+        twitch: this.profile.twitch,
+        gmaps: this.profile.gmaps
       })
     };
   },
   methods: {
     updateMedias: function updateMedias() {
-      this.form.post(route('profile.update'), {
+      this.form.post(route('profile.social.update'), {
         errorBag: 'updateMedias',
         preserveScroll: true
       });
@@ -27088,8 +27096,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             /* STABLE */
 
           }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_SocialMedias, {
-            "class": "mt-5"
-          })];
+            "class": "mt-5",
+            profile: $props.profile
+          }, null, 8
+          /* PROPS */
+          , ["profile"])];
         }),
         _: 1
         /* STABLE */

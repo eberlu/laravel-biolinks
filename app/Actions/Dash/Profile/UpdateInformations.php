@@ -5,7 +5,7 @@ namespace App\Actions\Dash\Profile;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class UpdateProfile
+class UpdateInformations
 {
     use AsAction;
 
@@ -15,7 +15,7 @@ class UpdateProfile
         return $profile->update($request->all());
     }
 
-    public function htmlResponse($profile)
+    public function htmlResponse()
     {
        return redirect()->back();
     }

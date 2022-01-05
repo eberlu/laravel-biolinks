@@ -104,12 +104,20 @@ export default {
         return {
             form: this.$inertia.form({
                 _method: 'PUT',
+                facebook: this.profile.facebook,
+                instagram: this.profile.instagram,
+                tiktok: this.profile.tiktok,
+                twitter: this.profile.twitter,
+                linkedin: this.profile.linkedin,
+                youtube: this.profile.youtube,
+                twitch: this.profile.twitch,
+                gmaps: this.profile.gmaps,
             }),
         }
     },
     methods: {
         updateMedias() {
-            this.form.post(route('profile.update'), {
+            this.form.post(route('profile.social.update'), {
                 errorBag: 'updateMedias',
                 preserveScroll: true,
             })
