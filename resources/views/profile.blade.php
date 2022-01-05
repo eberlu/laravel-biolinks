@@ -48,18 +48,18 @@
                 <i class="text-lg fas fa-share"></i>
                 <span class="text-xs mt-2 ">Compartilhar</span>
             </button>
-            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+            <a href="https://wa.me/55{{preg_replace("/[^0-9]/", "", $profile->whatsapp)}}" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" target="_blank">
                 <i class="text-lg fab fa-whatsapp"></i>
                 <span class="text-xs mt-2 ">Conversar</span>
-            </button>
-            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+            </a>
+            <a href="mailto:{{ $profile->email }}" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" target="_blank">
                 <i class="text-lg fas fa-envelope"></i>
                 <span class="text-xs mt-2 ">Email</span>
             </button>
-            <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
+            <a href="tel:+55{{ $profile->phone }}" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);">
                 <i class="text-lg fas fa-phone"></i>
                 <span class="text-xs mt-2 ">Ligar</span>
-            </button>
+            </a>
         </section>
 
         <section class="links flex flex-col items-center justify-center">
