@@ -19,10 +19,18 @@
                                     <jet-input id="description" type="text" class="block w-full" v-model="form.description" />
                                     <jet-input-error :message="form.errors.description" class="mt-2" />
                                 </div>
+                                
+                            </div>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 w-full lg:gap-x-4 lg:mt-5">
                                 <div class="mt-3">
                                     <jet-label for="url" value="Endereço de seu perfil (URL)" />
                                     <jet-input id="url" type="text" class="block w-full" v-model="form.url" />
                                     <jet-input-error :message="form.errors.url" class="mt-2" />
+                                </div>
+                                <div class="mt-3">
+                                    <jet-label for="email" value="Email para contato" />
+                                    <jet-input id="email" type="email" class="block w-full" v-model="form.email" />
+                                    <jet-input-error :message="form.errors.email" class="mt-2" />
                                 </div>
                                 <div class="mt-3">
                                     <jet-label for="phone" value="Telefone para contato" />
@@ -33,11 +41,6 @@
                                     <jet-label for="whatsapp" value="Whatsapp para contato" />
                                     <input-phone id="whatsapp" type="text" class="block w-full" v-model="form.whatsapp" />
                                     <jet-input-error :message="form.errors.whatsapp" class="mt-2" />
-                                </div>
-                                <div class="mt-3">
-                                    <jet-label for="email" value="Email para contato" />
-                                    <jet-input id="email" type="email" class="block w-full" v-model="form.email" />
-                                    <jet-input-error :message="form.errors.email" class="mt-2" />
                                 </div>
                             </div>
                         </div>

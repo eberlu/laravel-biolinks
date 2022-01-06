@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="updateMedias()">
-            <collapse :isCollapsed="true">
+            <collapse>
                 <template #button>
                     Social
                 </template>
