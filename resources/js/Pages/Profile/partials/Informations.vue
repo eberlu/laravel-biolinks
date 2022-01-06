@@ -24,6 +24,21 @@
                                     <jet-input id="url" type="text" class="block w-full" v-model="form.url" />
                                     <jet-input-error :message="form.errors.url" class="mt-2" />
                                 </div>
+                                <div class="mt-3">
+                                    <jet-label for="phone" value="Telefone para contato" />
+                                    <input-phone id="phone" type="text" class="block w-full" v-model="form.phone" />
+                                    <jet-input-error :message="form.errors.phone" class="mt-2" />
+                                </div>
+                                <div class="mt-3">
+                                    <jet-label for="whatsapp" value="Whatsapp para contato" />
+                                    <input-phone id="whatsapp" type="text" class="block w-full" v-model="form.whatsapp" />
+                                    <jet-input-error :message="form.errors.whatsapp" class="mt-2" />
+                                </div>
+                                <div class="mt-3">
+                                    <jet-label for="email" value="Email para contato" />
+                                    <jet-input id="email" type="email" class="block w-full" v-model="form.email" />
+                                    <jet-input-error :message="form.errors.email" class="mt-2" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,6 +67,7 @@ import JetInput from '@/Jetstream/Input.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetInputError from '@/Jetstream/InputError.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
+import InputPhone from '@/Components/InputPhone.vue'
 
 export default {
     props: ['profile'],
@@ -61,7 +77,8 @@ export default {
         JetInput,
         JetLabel,
         JetInputError,
-        JetActionMessage
+        JetActionMessage,
+        InputPhone
     },
     data() {
         return {
@@ -69,7 +86,10 @@ export default {
                 _method: 'PUT',
                 nickname: this.profile.nickname,
                 description: this.profile.description,
-                url: this.profile.url
+                url: this.profile.url,
+                phone: this.profile.phone,
+                whatsapp: this.profile.whatsapp,
+                email: this.profile.email
             }),
         }
     },

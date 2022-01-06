@@ -28,7 +28,8 @@ class Profile extends Model
         'phone_2',
         'twitch',
         'youtube',
-        'linkedin'
+        'linkedin',
+        'email'
     ];
 
     protected $appends = [
