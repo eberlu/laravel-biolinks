@@ -36,6 +36,8 @@
 
                 <SocialMedias class="mt-5" :profile="profile"/>
 
+                <Layout class="mt-5" :profile="profile" />
+
             </content-page>
         </div>
 
@@ -50,6 +52,7 @@ import Button from '@/Components/Button.vue'
 import Alert from '@/Components/Alert.vue'
 import Informations from './partials/Informations'
 import SocialMedias from './partials/SocialMedias'
+import Layout from './partials/Layout'
 
 export default {
     components: {
@@ -59,7 +62,8 @@ export default {
         Button,
         Alert,
         Informations,
-        SocialMedias
+        SocialMedias,
+        Layout
     },
     props: ['profile', 'user'],
 }

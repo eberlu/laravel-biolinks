@@ -33,6 +33,8 @@ class CreateProfilesTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('twitch')->nullable();
             $table->string('email')->nullable();
+            $table->string('color_primary')->default('#262626');
+            $table->string('color_secondary')->default('#fff');
             $table->timestamps();
         });
     }

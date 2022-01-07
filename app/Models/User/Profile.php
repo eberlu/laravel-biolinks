@@ -29,7 +29,9 @@ class Profile extends Model
         'twitch',
         'youtube',
         'linkedin',
-        'email'
+        'email',
+        'color_primary',
+        'color_secondary'
     ];
 
     protected $appends = [
