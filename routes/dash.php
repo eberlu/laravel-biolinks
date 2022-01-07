@@ -21,6 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             Route::get('/', GetProfile::class)->name('edit');
             Route::put('/informations', UpdateInformations::class)->name('infos.update');
             Route::put('/social', UpdateSocialMedias::class)->name('social.update');
+            Route::put('/layout', UpdateLayout::class)->name('layout.update');
     
         });
     
