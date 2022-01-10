@@ -8,34 +8,21 @@
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}" />
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome5/all.min.css') }}">
 </head>
-<body style="background-color: #262626;">
+<body style="background-color: {{  $profile->color_primary }};">
 
-    <header class="header flex flex-col items-center justify-center py-8" style="color: #fff;">
+    <header class="header flex flex-col items-center justify-center py-8" style="color: {{  $profile->color_secondary }};">
         <div class="avatar w-28 h-28 bg-no-repeat bg-cover bg-center rounded-full flex" style="background-image: url({{ $profile->avatar }})"></div>
 
         <h1 class="mt-4 font-medium text-3xl">{{ $profile->nickname }}</h1>
         <h2 class="mt-1 font-light">{{ $profile->description }}</h2>
 
-        <section class="social mt-2 flex items-center justify-center">
-            <a href="" class="btn-social btn-facebook">
-                <i class="fab fa-facebook"> </i>
-            </a>
-            <a href="" class="btn-social btn-instagram">
-                <i class="fab fa-instagram"> </i>
-            </a>
-            <a href="" class="btn-social btn-tiktok">
-                <i class="fab fa-tiktok"> </i>
-            </a>
-            <a href="" class="btn-social btn-twitter">
-                <i class="fab fa-twitter"> </i>
-            </a>
-        </section>
+        @include('profile.social')
 
     </header>
 
-    <main class="main container mx-auto px-10 sm:max-w-md lg:max-w-screen-sm" style="color: #262626;">
+    <main class="main container mx-auto px-10 sm:max-w-md lg:max-w-screen-sm" style="color: {{  $profile->color_primary }};">
 
-        <section class="actions flex items-center justify-center mb-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" style="color: #fff">
+        <section class="actions flex items-center justify-center mb-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" style="color: {{  $profile->color_secondary }}">
             <button type="button" class="p-3 flex flex-col items-center justify-center action rounded-sm lg:hover:scale-105 transition" style="border-color: rgba(250,250,250,.2);" id="btnQR">
                 <i class="text-lg fas fa-qrcode"></i>
                 <span class="text-xs mt-2 ">QR Code</span>
@@ -65,8 +52,8 @@
         <section class="links flex flex-col items-center justify-center">
             
             @foreach ($profile->links as $link)
-                <a href="{{ $link->url }}" class="m-7 shadow-lg mt-0 w-full text-left rounded-sm flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank" style="background-color: #fff;">
-                    <i class="fas fa-cube px-3 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-3  relative" style="background-color: #262626; color: #fff; border: 2px solid #fff;"></i>
+                <a href="{{ $link->url }}" class="m-7 shadow-lg mt-0 w-full text-left rounded-sm flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank" style="background-color: {{  $profile->color_secondary }};">
+                    <i class="fas {{ ($link->icon) ? $link->icon : 'fa-cube' }} px-3 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-3  relative" style="background-color: {{  $profile->color_primary }}; color: {{  $profile->color_secondary }}; border: 2px solid {{  $profile->color_secondary }};"></i>
                     {{ $link->title }}
                 </a>
             @endforeach
@@ -74,7 +61,7 @@
         </section>
     </main>
 
-    <footer class="footer mt-5 text-center p-5" style="color: #fff;">
+    <footer class="footer mt-5 text-center p-5" style="color: {{  $profile->color_secondary }};">
         {{ env('APP_NAME') }} - {{ date('Y') }}
     </footer>
 

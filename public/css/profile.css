@@ -2211,6 +2211,15 @@ select {
 .btn-social.btn-twitter {
     background-color: #1DA1F2;
 }
+.btn-social.btn-youtube {
+    background-color: #c72c17;
+}
+.btn-social.btn-linkedin {
+    background-color: #1755c7;
+}
+.btn-social.btn-twitch {
+    background-color: #5a17c7;
+}
 .action {
     border: 1px solid;
 }
