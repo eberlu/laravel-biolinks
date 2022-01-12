@@ -9,35 +9,7 @@
 
             <div class="py-12">
                 <content-page>
-                    <form-section @submitted="save">
-
-                        <template #form>
-                   
-                            <!-- title -->
-                            <div class="col-span-6 sm:col-span-3">
-                                <jet-label for="title" value="Título" />
-                                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autocomplete="title" />
-                                <jet-input-error :message="form.errors.title" class="mt-2" />
-                            </div>
-
-                            <!-- url -->
-                            <div class="col-span-6 sm:col-span-3">
-                                <jet-label for="url" value="URL" />
-                                <jet-input id="url" type="text" class="mt-1 block w-full" v-model="form.url" />
-                                <jet-input-error :message="form.errors.url" class="mt-2" />
-                            </div>
-                        </template>
-
-                        <template #actions>
-                            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-                                Link criado com sucesso
-                            </jet-action-message>
-
-                            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                Salvar
-                            </jet-button>
-                        </template>
-                    </form-section>
+                    <FormLinks :form="form" @changeIcon="changeIcon" @save="save" actionMessage="Link criado com sucesso"/>
                 </content-page>
             </div>
 
@@ -48,32 +20,20 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ContentPage from '@/Components/ContentPage.vue'
-import FormSection from '@/Components/FormSection.vue'
-import JetButton from '@/Jetstream/Button.vue'
-import JetInput from '@/Jetstream/Input.vue'
-import JetInputError from '@/Jetstream/InputError.vue'
-import JetLabel from '@/Jetstream/Label.vue'
-import JetActionMessage from '@/Jetstream/ActionMessage.vue'
-import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+import FormLinks from './_form.vue'
 
 export default {
     components: {
         AppLayout, 
         ContentPage, 
-        JetActionMessage,
-        JetButton,
-        FormSection,
-        JetInput,
-        JetInputError,
-        JetLabel,
-        JetSecondaryButton,
+        FormLinks
     },
     data(){
         return {
             form: this.$inertia.form({
-                title: '',
-                url: '',
-                icon: '',
+                title: null,
+                url: null,
+                icon: null,
             })
         }
     },
@@ -83,6 +43,9 @@ export default {
                 onSuccess: () => this.form.reset()
             })
         },
+        changeIcon(icon) {
+            this.form.icon = icon
+        }
     }
 }
 </script>

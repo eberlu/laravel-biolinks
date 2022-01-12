@@ -29,6 +29,12 @@ class CreateProfilesTable extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('phone')->nullable();
             $table->string('phone_2')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitch')->nullable();
+            $table->string('email')->nullable();
+            $table->string('color_primary')->default('#262626');
+            $table->string('color_secondary')->default('#ffffff');
             $table->timestamps();
         });
     }

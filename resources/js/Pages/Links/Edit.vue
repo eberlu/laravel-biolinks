@@ -3,13 +3,13 @@
         <app-layout title="Links">
             <template #header>
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Editar Link
+                    Criar Link
                 </h2>
             </template>
 
             <div class="py-12">
                 <content-page>
-                    {{ $page.props.link }}
+                    <FormLinks :form="form" @changeIcon="changeIcon" @save="save"/>
                 </content-page>
             </div>
 
@@ -20,11 +20,32 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ContentPage from '@/Components/ContentPage.vue'
+import FormLinks from './_form.vue'
+
 export default {
-    props: ['link'],
     components: {
         AppLayout, 
         ContentPage, 
+        FormLinks
     },
+    props: ['link'],
+    data(){
+        return {
+            form: this.$inertia.form({
+                _method: 'PUT',
+                title: this.$page.props.link.title,
+                url: this.$page.props.link.url,
+                icon: this.$page.props.link.icon,
+            })
+        }
+    },
+    methods: {
+        save(){
+            this.form.post(route('links.update', this.$page.props.link.id))
+        },
+        changeIcon(icon) {
+            this.form.icon = icon
+        }
+    }
 }
 </script>

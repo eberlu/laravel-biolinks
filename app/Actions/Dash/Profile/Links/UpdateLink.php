@@ -4,15 +4,15 @@ namespace App\Actions\Dash\Profile\Links;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use Illuminate\Http\Request;
+use App\Models\User\Profile\Link;
 
-class StoreLink
+class UpdateLink
 {
     use AsAction;
 
-    public function handle(Request $request)
+    public function handle(Request $request, $id)
     {
-        $profile = \Auth::user()->profile;
-        return $profile->links()->create($request->all());
+        return Link::findOrFail($id)->update($request->all());
     }
 
     public function htmlResponse()

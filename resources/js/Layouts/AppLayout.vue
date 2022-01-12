@@ -88,7 +88,11 @@
                             </div>
 
                             <!-- Settings Dropdown -->
-                            <div class="ml-3 relative">
+                            <div class="ml-3 relative flex items-center">
+                                <a :href="route('profile', $page.props.user.profile.code)" class="mr-8 text-sm text-gray-600" target="_blank">
+                                    Visualizar Perfil
+                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                </a>
                                 <jet-dropdown align="right" width="48">
                                     <template #trigger>
                                         <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">

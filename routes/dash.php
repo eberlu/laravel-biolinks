@@ -19,7 +19,9 @@ Route::middleware(['auth:sanctum', 'verified'])
         ->group(function() {
     
             Route::get('/', GetProfile::class)->name('edit');
-            Route::put('/', UpdateProfile::class)->name('update');
+            Route::put('/informations', UpdateInformations::class)->name('infos.update');
+            Route::put('/social', UpdateSocialMedias::class)->name('social.update');
+            Route::put('/layout', UpdateLayout::class)->name('layout.update');
     
         });
     
@@ -34,6 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             Route::post('/', StoreLink::class)->name('store');
             Route::delete('/{id}', DestroyLink::class)->name('destroy');
             Route::get('/{id}', EditLink::class)->name('edit');
+            Route::put('/{id}', UpdateLink::class)->name('update');
         });
     });
 

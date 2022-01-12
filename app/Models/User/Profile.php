@@ -26,6 +26,12 @@ class Profile extends Model
         'whatsapp',
         'phone',
         'phone_2',
+        'twitch',
+        'youtube',
+        'linkedin',
+        'email',
+        'color_primary',
+        'color_secondary'
     ];
 
     protected $appends = [
