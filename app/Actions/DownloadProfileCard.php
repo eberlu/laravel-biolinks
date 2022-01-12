@@ -15,7 +15,7 @@ class DownloadProfileCard
             ->orWhere('url', $code)->first();
 
         $vcard = new \JeroenDesloovere\VCard\VCard();
-        $vcard->addName($profile->name);
+        $vcard->addName($profile->nickname);
         $vcard->addCompany($profile->description);
         $vcard->addEmail($profile->email);
         $vcard->addPhoneNumber($profile->phone, 'WORK');
