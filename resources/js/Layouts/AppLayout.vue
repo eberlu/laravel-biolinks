@@ -89,7 +89,7 @@
 
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative flex items-center">
-                                <a :href="route('profile', $page.props.user.profile.code)" class="mr-8 text-sm text-gray-600" target="_blank">
+                                <a :href="route('profile', $page.props.profile.code)" class="mr-8 text-sm text-gray-600" target="_blank">
                                     Visualizar Perfil
                                     <i class="fas fa-external-link-alt ml-1"></i>
                                 </a>
