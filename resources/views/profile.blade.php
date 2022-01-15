@@ -53,7 +53,7 @@
             
             @foreach ($profile->links as $link)
                 <a href="{{ $link->url }}" class="m-7 shadow-lg mt-0 w-full text-left rounded-sm flex items-center justify-start relative hover:shadow-none transition-shadow duration-500" target="_blank" style="background-color: {{  $profile->color_secondary }};">
-                    <i class="fas {{ ($link->icon) ? $link->icon : 'fa-cube' }} px-3 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-3  relative" style="background-color: {{  $profile->color_primary }}; color: {{  $profile->color_secondary }}; border: 2px solid {{  $profile->color_secondary }};"></i>
+                    <i class="{{ ($link->icon) ? $link->icon : 'fas fa-cube' }} px-3 py-2 sm:py-3 text-center h-full rounded-l-md text-2xl mr-3  relative" style="background-color: {{  $profile->color_primary }}; color: {{  $profile->color_secondary }}; border: 2px solid {{  $profile->color_secondary }}; min-width: 60px;"></i>
                     {{ $link->title }}
                 </a>
             @endforeach
