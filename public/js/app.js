@@ -24802,7 +24802,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Settings Dropdown "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: _ctx.route('profile', _ctx.$page.props.user.profile),
+    href: _ctx.route('profile', _ctx.$page.props.profile.code),
     "class": "mr-8 text-sm text-gray-600",
     target: "_blank"
   }, _hoisted_31, 8
