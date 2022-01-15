@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: {{  $profile->color_primary }};">
 
-    <header class="header flex flex-col items-center justify-center py-8" style="color: {{  $profile->color_secondary }};">
+    <header class="header flex flex-col items-center justify-center py-8 container mx-auto px-10 sm:max-w-md lg:max-w-screen-sm" style="color: {{  $profile->color_secondary }};">
         <div class="avatar w-28 h-28 bg-no-repeat bg-cover bg-center rounded-full flex" style="background-image: url({{ $profile->avatar }})"></div>
 
         <h1 class="mt-4 font-medium text-3xl">{{ $profile->nickname }}</h1>

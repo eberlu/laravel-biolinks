@@ -1,4 +1,4 @@
-<section class="social mt-2 flex items-center justify-center">
+<section class="social mt-2 flex items-center justify-center flex-wrap">
 
     @if($profile->facebook)
         <a href="{{ $profile->facebook }}" class="btn-social btn-facebook" target="_blank">
