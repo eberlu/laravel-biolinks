@@ -14,7 +14,7 @@ Esta é uma aplicação protótipo para projetos de biolinks. Desenvolvida sob o
 - Vue 3x
 - Inertia JS
 
-Consulte a wiki caso precise de ajuda para baixar e executar o projeto.
+Consulte a [wiki](https://github.com/luciano-eber/laravel-biolinks/wiki) caso precise de ajuda para baixar e executar o projeto.
 
 ## Uma nova forma de organizar projetos...
 
