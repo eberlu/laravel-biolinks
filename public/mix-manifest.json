@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/profile.js": "/js/profile.js",
-    "/css/profile.css": "/css/profile.css",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=0b307d34fe5c402caa2545e4637a7398",
+    "/js/profile.js": "/js/profile.js?id=67ef59f358edda43cc488f32decf964a",
+    "/css/profile.css": "/css/profile.css?id=680e538f8feeb9377c3e3ca2a00f9bf8",
+    "/css/app.css": "/css/app.css?id=44b97122f81be3362788754d7635f38c"
 }
